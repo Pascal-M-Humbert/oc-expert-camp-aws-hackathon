@@ -1,0 +1,17 @@
+{
+  "name": "aws-hackathon-nodejs",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon.git"
+  },
+  "author": "OPITZ CONSULTING Deutschland GmbH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon/issues"
+  },
+  "homepage": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon#readme"
+}
