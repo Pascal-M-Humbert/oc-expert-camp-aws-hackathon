@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server -d --progress --hot --port 9090",
     "build": "webpack -p --progress",
     "start": "npm run build && static-server ./build",
-    "test": "mocha ./src/**/*.test.js --compilers js:babel-core/register --recursive",
+    "test": "mocha ./src/**/*.test.js --compilers js:babel-core/register --require babel-polyfill --recursive",
     "testES6": "mocha test --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch"
   },
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon#readme",
   "dependencies": {
-    "csv-parser": "^1.12.1",
+    "convert-csv-to-json": "0.0.13",
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {

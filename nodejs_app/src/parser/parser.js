@@ -1,6 +1,5 @@
-import parser from "csv-parser";
+import csvToJson from "convert-csv-to-json";
 
-export function parseDataFrom(path) {
-  console.log("Parse data from file " + path);
-  return [];
+export function parse(path, delimeter = ",") {
+  return csvToJson.fieldDelimiter(delimeter).getJsonFromCsv(path);
 }

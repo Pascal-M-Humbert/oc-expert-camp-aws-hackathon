@@ -1,19 +1,17 @@
 import assert from "assert";
-import { parseDataFrom } from "./parser";
+import { parse } from "./parser";
 
 describe("parser", () => {
-  beforeEach(() => {});
-
   it("should parse data", () => {
-    let path = "../../resources/testData";
+    let path = "./resources/testData.csv";
     let expected = [
       { name: "Pizza", price: 5.9 },
       { name: "Burger", price: 6.99 },
       { name: "Fries", price: 3.5 }
     ];
 
-    let actual = parseDataFrom(path);
+    let actual = parse(path);
 
-    assert.equal(actual, expected);
+    assert.deepEqual(actual, expected);
   });
 });
