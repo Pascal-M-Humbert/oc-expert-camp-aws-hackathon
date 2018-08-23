@@ -1,9 +1,17 @@
 {
-  "name": "aws-hackathon-nodejs",
-  "devDependencies": {},
+  "name": "nodejs_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "test": "test"
+    "dev": "webpack-dev-server -d --progress --hot --port 9090",
+    "build": "webpack -p --progress",
+    "start": "npm run build && static-server ./build",
+    "test": "mocha ./src/**/*.test.js --compilers js:babel-core/register --recursive",
+    "testES6": "mocha test --compilers js:babel-core/register --recursive",
+    "test:watch": "npm test -- --watch"
   },
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon.git"
@@ -13,5 +21,24 @@
   "bugs": {
     "url": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon/issues"
   },
-  "homepage": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon#readme"
+  "homepage": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon#readme",
+  "dependencies": {
+    "csv-parser": "^1.12.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "mocha": "^5.2.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.17.1",
+    "webpack-dev-server": "^3.1.5"
+  }
 }
