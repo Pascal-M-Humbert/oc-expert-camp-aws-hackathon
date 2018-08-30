@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "webpack-dev-server -d --progress --hot --port 9090",
-    "build": "webpack -p --progress",
+    "build": "7z a -tzip lambdaUpload.zip %CD%/src/*",
     "start": "npm run build && static-server ./build",
     "test": "mocha ./src/**/*.test.js --compilers js:babel-core/register --require babel-polyfill --recursive",
     "testES6": "mocha test --compilers js:babel-core/register --recursive",
