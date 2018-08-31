@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "dev": "webpack-dev-server -d --progress --hot --port 9090",
-    "build": "7z a -tzip lambdaUpload.zip %CD%/src/*",
+    "build": "7z a -tzip parser-nodejs.zip %CD%/src/* %CD%/node_modules",
+    "uploadToS3": "aws s3 cp parser-nodejs.zip s3://oc-expert-camp-lambda-uploads",
+    "toLambda": "",
     "start": "npm run build && static-server ./build",
     "test": "mocha ./src/**/*.test.js --compilers js:babel-core/register --require babel-polyfill --recursive",
     "testES6": "mocha test --compilers js:babel-core/register --recursive",
@@ -23,10 +25,10 @@
   },
   "homepage": "https://github.com/Pascal-M-Humbert/oc-expert-camp-aws-hackathon#readme",
   "dependencies": {
-    "convert-csv-to-json": "0.0.13",
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
+    "aws-sdk": "^2.306.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

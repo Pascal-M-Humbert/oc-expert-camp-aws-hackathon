@@ -1,16 +1,26 @@
-import assert from "assert";
-import { parse } from "./parser";
+const assert = require("assert");
+const parser = require("./parser");
 
 describe("parser", () => {
   it("should parse data", () => {
-    let path = "./resources/testData.csv";
+    let rawCsv =
+      "stringKey,numberKey,booleanKey\n" +
+      "string1,42,true\n" +
+      "string2,43,false";
     let expected = [
-      { name: "Pizza", price: 5.9 },
-      { name: "Burger", price: 6.99 },
-      { name: "Fries", price: 3.5 }
+      {
+        stringKey: "string1",
+        numberKey: "42",
+        booleanKey: "true"
+      },
+      {
+        stringKey: "string2",
+        numberKey: "43",
+        booleanKey: "false"
+      }
     ];
 
-    let actual = parse(path);
+    let actual = parser.parse(rawCsv);
 
     assert.deepEqual(actual, expected);
   });
