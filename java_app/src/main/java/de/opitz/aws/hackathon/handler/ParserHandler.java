@@ -30,11 +30,9 @@ public class ParserHandler implements RequestHandler<String, String> {
     private static final Regions DEFAULT_REGION = Regions.EU_CENTRAL_1;
     private static final String BUCKET_NAME = "oc-expert-camp-dump-file";
     private static final String KEY = "SalesJan2009.csv";
-    private static final int SIZE_CSV_LINE = 12;
     private static final String CSV_SPLIT_CHARACTERE = ",";
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("MM/DD/YY hh:mm", Locale.GERMANY);
-
 
     @Override
     public String handleRequest(String s, Context context) {
@@ -53,7 +51,7 @@ public class ParserHandler implements RequestHandler<String, String> {
         return "success";
     }
 
-    private static void parseFile(InputStream input) throws IOException {
+    private void parseFile(InputStream input) throws IOException {
         // Read the text input stream one line at a time and display each line.
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
         String line;
@@ -73,9 +71,9 @@ public class ParserHandler implements RequestHandler<String, String> {
         transactions.stream().forEach(transaction -> System.out.println(transaction.toString()));
     }
 
-    private static Transaction createTransaction(String[] transactionString) throws ParseException {
-        if (transactionString == null || transactionString.length != SIZE_CSV_LINE) {
-            logger.error(String.format("transactionString was empty or too small %s", transactionString));
+    private Transaction createTransaction(String[] transactionString) throws ParseException {
+        if (transactionString == null) {
+            logger.error(String.format("transactionString was empty %s", transactionString));
         }
         Calendar cal = Calendar.getInstance();
         Transaction transaction = new Transaction();
