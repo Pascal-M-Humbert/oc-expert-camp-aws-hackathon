@@ -23,7 +23,9 @@ $(document).ready(function() {
     .done(function(json) {
       document.getElementById("status").style.visibility = "hidden";
       document.getElementById("loading").style.visibility = "hidden";
-      document.getElementById("id").innerHTML = json.result;
+      document.getElementById("max").innerHTML = parseInt(json.result, 10) + 15;
+      document.getElementById("min").innerHTML = parseInt(json.result, 10) - 15;
+      document.getElementById("average").innerHTML = parseInt(json.result, 10);
     })
     // Code to run if the request fails; the raw request and
     // status codes are passed to the function
