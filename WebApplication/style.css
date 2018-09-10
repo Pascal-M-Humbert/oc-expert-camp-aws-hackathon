@@ -1,0 +1,32 @@
+html,
+body {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+iframe {
+    overflow: hidden;
+    height: 100vh; 
+    width: 100%;
+}
+
+div.content {
+    margin-top: 40vh;    
+}
+
+div.content {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #B0BEC5;
+}
+
+div.displayID {
+    font-weight: 100;
+    font-size: 72px;
+}
+
+span {
+    font-weight: 600;
+}

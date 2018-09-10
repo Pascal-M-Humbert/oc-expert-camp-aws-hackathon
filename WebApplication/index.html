@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Opitz Hackathon AWS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="content">
+      <div class="displayID">Result
+        <span id="id"></span>
+      </div>
+      <span id="icon">
+        <i class="fas fa-circle-notch fa-spin" id="loading"></i>
+      </span>
+      <span id="status">connecting...</span>
+    </div>
+  </div>
+
+  <iframe name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" id="dashboard"></iframe>
+
+  <!-- no minifed version available through npm: https://github.com/joewalnes/reconnecting-websocket -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
