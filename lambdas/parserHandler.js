@@ -1,7 +1,7 @@
 const aws = require("aws-sdk");
 const s3 = new aws.S3();
 
-exports.parserHandler = function(event, context, callback) {
+exports.handler = function(event, context, callback) {
   console.log("event: " + JSON.stringify(event));
   console.log("context: " + JSON.stringify(context));
   console.log("callback: " + JSON.stringify(callback));
@@ -16,7 +16,7 @@ exports.parserHandler = function(event, context, callback) {
       console.log("err: " + err);
     } else {
       console.log("data: " + data.Body.toString());
-      let json = parse(data.Body.toString(), ",", "\n");
+      let json = parse(data.Body.toString(), ",", "\r");
       console.log("json: " + JSON.stringify(json));
     }
   });
